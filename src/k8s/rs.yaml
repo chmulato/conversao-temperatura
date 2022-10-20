@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: conversao-temperatura
+spec:
+  replicas: 1
+  selector:
+    app: conversao-temperatura
+  template:
+    metadata:
+      name: conversao-temperatura
+      labels:
+        app: conversao-temperatura
+    spec:
+      containers:
+        - name: conversao-temperatura
+          image: conversao-temperatura
+          ports:
+            - containerPort: 8080
